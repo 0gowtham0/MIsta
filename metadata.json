@@ -1,0 +1,10 @@
+{
+  "name": "Mista Sri City",
+  "description": "An interactive real estate website and AI voice sales assistant for Mista Sri City, providing property details, villa layouts, amenities, and real-time voice guidance.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
