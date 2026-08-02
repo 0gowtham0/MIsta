@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && node -e \"require('fs').cpSync('.next', 'dist', {recursive: true})\"",
+    "export": "NEXT_EXPORT=true next build",
     "start": "next start -p ${PORT:-3000}",
     "lint": "eslint .",
     "clean": "next clean"
