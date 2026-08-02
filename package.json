@@ -4,11 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && node -e \"require('fs').cpSync('.next', 'dist', {recursive: true})\"",
-    "export": "NEXT_EXPORT=true next build",
+    "build": "node -e \"require('fs').rmSync('dist', {recursive: true, force: true})\" && next build && node -e \"const fs = require('fs'); if (fs.existsSync('out')) fs.cpSync('out', 'dist', {recursive: true}); else if (fs.existsSync('.next')) fs.cpSync('.next', 'dist', {recursive: true});\"",
+    "export": "next build",
     "start": "next start -p ${PORT:-3000}",
     "lint": "eslint .",
-    "clean": "next clean"
+    "clean": "node -e \"require('fs').rmSync('.next', {recursive: true, force: true}); require('fs').rmSync('dist', {recursive: true, force: true}); require('fs').rmSync('out', {recursive: true, force: true});\""
   },
   "dependencies": {
     "@google/genai": "^1.17.0",
